@@ -23,7 +23,7 @@ for file in ${FILES[*]}
 do
 	if [ -e $file ]
 	then
-		ln -sf $(readlink $file) $(date -u +%C-%m-%d)_$file
+		ln -sf $(readlink $file) $(date -u +%Y-%m-%d)_$file
 		if [[ $(readlink $file) != $(readlink .tmp_$file) ]]
 		then
 			git-annex drop --force --fast .tmp_$file
